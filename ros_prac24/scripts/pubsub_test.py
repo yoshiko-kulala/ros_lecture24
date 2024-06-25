@@ -15,7 +15,7 @@ def update_pose(data):
     pose.x = data.x
     pose.y = data.y
     pose.theta = data.theta
-
+    
 def update_cmd_vel():
     global cmd_vel
     global nowRotating
@@ -33,7 +33,7 @@ def update_cmd_vel():
         cmd_vel.linear.x = 2.0
         cmd_vel.angular.z = 0.0
         nowRotating = False
-
+        
 def autonomous_controller():
     rospy.init_node('autonomous_controller')
     pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
